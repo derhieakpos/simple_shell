@@ -1,5 +1,5 @@
-#ifndef "main.h"
-#define "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,6 +11,6 @@
 #define MAX_INPUT_SIZE 1024
 
 int customStrlen(const char *str);
-int customStrcmp(const char *str1, const char *str2)
+int customStrcmp(const char *str1, const char *str2);
 
 #endif
