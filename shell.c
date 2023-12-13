@@ -5,31 +5,28 @@
 /**
  * main - executes the function in the executeCommand function
  *
- * @custom_strlen: checks the string length
- * @custom_strcmp: compares the strings
- *
  * Return: 0
  */
 
-int main(void) {
-    char input[MAX_INPUT_SIZE];
+int main(void)
+{
+	char input[MAX_INPUT_SIZE];
 
-    while (1) {
-        printf("$ ");
-        if (fgets(input, sizeof(input), stdin) == NULL) {
-            break;
-        }
+	while (1)
+	{
+		printf("$ ");
+		if (fgets(input, sizeof(input), stdin) == NULL)
+			break;
 
-        /* Remove the trailing newline character */
-        input[strcspn(input, "\n")] = 0;
+		/* Remove the trailing newline character */
+		input[strcspn(input, "\n")] = 0;
 
-        /* Check if the input is "exit" or "Ctrl+D" */
-        if (strcmp(input, "exit") == 0 || feof(stdin)) {
-            break;
-        }
+		/* Check if the input is "exit" or "Ctrl+D" */
+		if (strcmp(input, "exit") == 0 || feof(stdin))
+			break;
 
-        execute_command(input);
-    }
+		execute_command(input);
+	}
 
-    return 0;
+	return (0);
 }
