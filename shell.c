@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include "main.h"
+#include "shell.h"
 
 #define MAX_INPUT_SIZE 1024
 
