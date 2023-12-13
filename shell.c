@@ -10,33 +10,26 @@
  *
  * Return: 0
  */
-int main(void)
-{
-	char input[MAX_INPUT_SIZE];
-	int inputLen = strlen(input);
 
-	while (1)
-	{
-		printf("$ ");
-		if (fgets(input, sizeof(input), stdin) == NULL)
-		{
-			break;
-		}
+int main(void) {
+    char input[MAX_INPUT_SIZE];
 
-		/* Remove the trailing newline character */
-		if (input[inputLen - 1] == '\n')
-		{
-			input[inputLen - 1] = '\0';
-		}
+    while (1) {
+        printf("$ ");
+        if (fgets(input, sizeof(input), stdin) == NULL) {
+            break;
+        }
 
-		/* Check if the input is "exit" */
-		if (strcmp(input, "exit") == 0)
-		{
-			break;
-		}
+        /* Remove the trailing newline character */
+        input[strcspn(input, "\n")] = 0;
 
-		execute_command(input);
-	}
+        /* Check if the input is "exit" or "Ctrl+D" */
+        if (strcmp(input, "exit") == 0 || feof(stdin)) {
+            break;
+        }
 
-	return (0);
+        execute_command(input);
+    }
+
+    return 0;
 }
