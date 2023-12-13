@@ -1,3 +1,5 @@
+#include "shell.h"
+
 /**
  * custom_Strlen - Checks the length of a string
  *

@@ -1,3 +1,5 @@
+#include "shell.h"
+
 /**
  * custom_Strcmp - It's check the string
  *

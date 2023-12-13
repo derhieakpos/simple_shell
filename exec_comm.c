@@ -9,7 +9,7 @@
  * Return: 0.
  */
 
-void executeCommand(char *command)
+void execute_command(char *command)
 {
 	pid_t pid = fork();
 

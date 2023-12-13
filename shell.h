@@ -10,7 +10,8 @@
 
 #define MAX_INPUT_SIZE 1024
 
-int customStrlen(const char *str);
-int customStrcmp(const char *str1, const char *str2);
+int custom_strlen(const char *str);
+int custom_strcmp(const char *str1, const char *str2);
+void execute_command(char *command);
 
 #endif
