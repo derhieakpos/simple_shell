@@ -12,6 +12,7 @@
 
 void execute_command(char *command, char *args[])
 {
+	pid_t pid = fork();
 	char *command_path = get_command_path(command);
 
 	if (command_path == NULL)
@@ -20,8 +21,6 @@ void execute_command(char *command, char *args[])
 		return;
 	}
 
-	pid_t pid = fork();
-
 	if (pid == -1)
 	{
 		perror("fork failed");
@@ -29,8 +28,8 @@ void execute_command(char *command, char *args[])
 	else if (pid == 0)
 	{
 		/* Child process */
-		execvp(command, args);
-		perror("execvp failed");
+		execv(command, args);
+		perror("execv failed");
 		exit(1);
 	}
 	else
