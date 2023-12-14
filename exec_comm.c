@@ -9,7 +9,7 @@
  * Return: 0.
  */
 
-void execute_command(char *command)
+void execute_command(char *command, char *args[])
 {
 	pid_t pid = fork();
 
@@ -20,7 +20,7 @@ void execute_command(char *command)
 	else if (pid == 0)
 	{
 		/* Child process */
-		execlp(command, command, (char *)NULL);
+		execvp(command, args);
 		perror("execvp failed");
 		exit(1);
 	}
@@ -31,5 +31,4 @@ void execute_command(char *command)
 
 		waitpid(pid, &status, 0);
 	}
-	free(command);
 }

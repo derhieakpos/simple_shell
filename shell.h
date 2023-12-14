@@ -9,9 +9,10 @@
 #include <sys/wait.h>
 
 #define MAX_INPUT_SIZE 1024
+#define MAX_ARGS 10
 
 int custom_strlen(const char *str);
 int custom_strcmp(const char *str1, const char *str2);
-void execute_command(char *command);
+void execute_command(char *command, char *args[]);
 
 #endif
