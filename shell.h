@@ -14,5 +14,6 @@
 int custom_strlen(const char *str);
 int custom_strcmp(const char *str1, const char *str2);
 void execute_command(char *command, char *args[]);
+char *get_command_path(char *command);
 
 #endif

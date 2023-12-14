@@ -24,7 +24,7 @@ int main(void)
 		/* Remove the trailing newline character */
 		input[strcspn(input, "\n")] = 0;
 
-		while (token != NULL && i <  MAX_ARGS -1)
+		while (token != NULL && i <  MAX_ARGS - 1)
 		{
 			args[i] = token;
 			token = strtok(NULL, " ");
