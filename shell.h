@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
 #define MAX_INPUT_SIZE 1024
 #define MAX_ARGS 10
